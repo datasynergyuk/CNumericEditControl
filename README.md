@@ -1,11 +1,11 @@
 ## **MFC CNumericEditControl**
 
 Simple replacement for MFC CEdit class that implements numeric decimal/hex/octal/binary input
-with clipboard and format conversion support:
+with clipboard and format conversion support.
 
 ![](docs/img/dialog.jpg)
 
-Features:
+### [](#)Features
 
 1. Input numeric value as decimal, hex, octal or binary 
 2. Convert to any other numeric format using UI context menu
@@ -19,7 +19,7 @@ The current input mode is displayed using a "cue" or watermark text.
 
 ![](docs/img/cue.jpg)
 
-MFC usage instructions:
+### [](#)MFC usage instructions
 
 1. Add "CNumericEditControl.h" and "CNumericEditControl.cpp" to your MFC project
 2. If necessary, add common controls manifest (see "stdafx.h" in example project)
@@ -33,3 +33,4 @@ MFC usage instructions:
 
 ## [](#)Licensing
 This software is available under the **"MIT License".**  
+[https://github.com/datasynergyuk/CNumericEditControl/blob/master/LICENSE](https://github.com/datasynergyuk/CNumericEditControl/blob/master/LICENSE)

@@ -60,6 +60,7 @@ public:
 	CString AsString(void);
 	LONGLONG AsValue(void);
 	void SetString(CString sText);
+	void SetValue(LONGLONG llNewValue);
 	void ChangeMode(EDisplayMode newMode);
 	void Empty(void);
 

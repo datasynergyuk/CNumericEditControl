@@ -212,12 +212,17 @@ BOOL CNumericEditControl::ParseValueInternal(LPCWSTR pszString, int nRadix, PLON
 				For both functions, errno is set to ERANGE if overflow or underflow occurs.
 	*/
 
+	//Ignore commas and spaces (common input from Windows Calculator application)
+	CString sCookedString = pszString;
+	sCookedString.Replace(L",", L"");
+	sCookedString.Replace(L" ", L"");
+
 	errno = 0;
 	wchar_t *end = NULL;	
-	LONGLONG llValue=wcstoull(pszString, &end, nRadix);
+	LONGLONG llValue=wcstoull(sCookedString.GetString(), &end, nRadix);
 
 	//Not a valid number
-	if (end == pszString)
+	if (end == sCookedString.GetString())
 		return false;
 
 	//Additional characters after numeric
@@ -267,6 +272,11 @@ LONGLONG CNumericEditControl::AsValue(void)
 void CNumericEditControl::SetString(CString sText)
 {
 	SetWindowText(sText);
+}
+
+void CNumericEditControl::SetValue(LONGLONG llNewValue)
+{
+	UpdateControl(llNewValue);
 }
 
 void CNumericEditControl::Empty(void)
